@@ -175,10 +175,45 @@ done
 
 
 ## Soal 4
-Pada soal nomor 4 diminta untuk menekripsi file syslog dan merubah sesuai 	 
+Pada soal nomor 4 diminta untuk menekripsi file syslog, dengan menkonversi string menambahkan sesuai jam yang tersimpan.
+Pertama membuat array untuk menyimpan string alphabet:
+```
+A=ABCDEFGHIJKLMNOPQRSTUVWXYZ
+B=abcdefghijklmnopqrstuvwxyz
 
+A2=($(echo ${A[@]})$(echo ${A[@]}))
+B2=($(echo ${B[@]})$(echo ${B[@]}))
+```
+Pada deklarasi diatas tertulis untuk meng-<i>echo</i> 2x isi alphabet tersebut bertujuan agar jika huruf yang sudah diubah melewati huruf z, maka enkripsi akan melanjutkan ke huruf a.
 
+Lalu karena kita ingin mengubah enkripsi nya sesuai jam yang tersimpan, maka menggunakan ```rot```
+```
+hour=`date +"%H"`
+rot=$hour
+```
+Setelah membuat rotation sesuai jam, kita akan meng-<i>echo</i> alphabet uppercase dan lowercase nya untuk menggunakan fungsi ```tr```.
+```
+ganteng=($(echo ${A[@]})$(echo ${B[@]}))
+baruA=$(echo $A | tr "${A:0:26}" "${A2:${rot}:26}")
+baruB=$(echo $B | tr "${B:0:26}" "${B2:${rot}:26}")
+ganteng2=($(echo ${baruA[@]})$(echo ${baruB[@]}))
+```
+Untuk menyimpan file syslog yang sudah terenkripsi dengan format yang diinginkan:
+```
+hisam=`date +"%H:%M %d-%m-%Y"`
+```
+Diatas adalah program untuk menkoversi alphabetnya, maka berikut kita ambil file syslog nya:
+```
+< /var/log/syslog > "$hisam" tr "$ganteng" "$ganteng2"
+```
 
+Untuk kembali mendekprisikannya kita menggunakan ```read```dan variabel baru untuk membaca file yang sudah terenkripsi. Dan merubah isi rot nya dengan 2 huruf pada nama file yang terenkripsi agar program dekrpisi berjalan kembali sesuai jam nya.
+```
+read sokin
+
+hour=${sokin:0:2}
+rot=$hour
+```
 
 ## Soal 5
 Membaca isi file system log:
