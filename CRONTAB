@@ -1,3 +1,9 @@
 #NO 1
 14 14 14 2 5 /bin/bash /home/zahrul/praktikum1/satu.sh
 14 14 * 2 5 /bin/bash /home/zahrul/praktikum1/satu.sh
+
+#NO 4
+0 * * * * /bin/bash /home/tieria21/soal4.sh
+
+#NO 5
+2-30/6 * * * * /bin/bash /home/tieria21/soal5.sh
