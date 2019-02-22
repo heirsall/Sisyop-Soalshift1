@@ -175,6 +175,10 @@ done
 
 
 ## Soal 4
+Pada soal nomor 4 diminta untuk menekripsi file syslog dan merubah sesuai 	 
+
+
+
 
 ## Soal 5
 Membaca isi file system log:
