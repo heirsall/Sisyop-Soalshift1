@@ -52,7 +52,7 @@ base64 -d $gambar | xxd -r > /home/zahrul/praktikum1/nature/hasil/$iter.jpg
 iter=$((iter+1))
 
 done
-
+![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/satu.png)
 
 ```
 CRONTAB
@@ -131,6 +131,7 @@ awk -F ',' '{if($7=='2012' && $1=="United States" && $4=="Personal Accessories")
 
 mengecek apakah data sesuai dengan product line"Personal Accesories" dan akan menampilkan data ke-2,3,4.
 
+![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/dua.png)
 ## Soal 3
 Buatlah sebuah script bash yang dapat menghasilkan password secara acak
 sebanyak 12 karakter yang terdapat huruf besar, huruf kecil, dan angka. Password
@@ -173,6 +174,7 @@ done
 ```
 
 
+![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/tiga.png)
 
 ## Soal 4
 Pada soal nomor 4 diminta untuk menekripsi file syslog, dengan menkonversi string menambahkan sesuai jam yang tersimpan.
@@ -207,6 +209,7 @@ Diatas adalah program untuk menkoversi alphabetnya, maka berikut kita ambil file
 < /var/log/syslog > "$hisam" tr "$ganteng" "$ganteng2"
 ```
 
+![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/4a.png)
 Untuk kembali mendekprisikannya kita menggunakan ```read```dan variabel baru untuk membaca file yang sudah terenkripsi. Dan merubah isi rot nya dengan 2 huruf pada nama file yang terenkripsi agar program dekrpisi berjalan kembali sesuai jam nya.
 ```
 read sokin
@@ -215,6 +218,7 @@ hour=${sokin:0:2}
 rot=$hour
 ```
 
+![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/4b.png)
 ## Soal 5
 Membaca isi file system log:
  
@@ -246,3 +250,5 @@ Terakhir setelah membuat program <i>AWK</i>-nya, mengatur jadwal jalannya script
 
 Dengan begitu program AWK akan berjalan sesuai jadwal Crontab pada file ```soal5.sh``` lalu merecord file system log dan
 membuat nya menjadi file log baru pada ```.../modul1/syslogno5.log```
+
+![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/4.png)
