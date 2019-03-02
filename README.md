@@ -52,9 +52,9 @@ base64 -d $gambar | xxd -r > /home/zahrul/praktikum1/nature/hasil/$iter.jpg
 iter=$((iter+1))
 
 done
-![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/satu.png)
-
 ```
+
+![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/satu.png)
 CRONTAB
 ```
 14 14 14 2 5 /bin/bash /home/zahrul/praktikum1/satu.sh //membuka seluruh
@@ -251,4 +251,4 @@ Terakhir setelah membuat program <i>AWK</i>-nya, mengatur jadwal jalannya script
 Dengan begitu program AWK akan berjalan sesuai jadwal Crontab pada file ```soal5.sh``` lalu merecord file system log dan
 membuat nya menjadi file log baru pada ```.../modul1/syslogno5.log```
 
-![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/4.png)
+![alt tag](https://github.com/heirsall/Sisyop-Soalshift1/blob/master/5.png)
